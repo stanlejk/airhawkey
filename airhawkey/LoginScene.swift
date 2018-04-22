@@ -24,7 +24,7 @@ class LoginScene : SKScene, Scene {
         let emailFieldFrame = CGRect(origin: CGPoint(x: 90, y: 450), size: CGSize(width: 200, height: 35))
         let emailField = UITextField(frame: emailFieldFrame)
         emailField.backgroundColor = UIColor.white
-        emailField.layer.borderColor = UIColor.black.cgColor
+        emailField.layer.borderColor = UIColor.gray.cgColor
         emailField.layer.borderWidth = 1.0
         emailField.placeholder = "Email"
         self.view!.addSubview(emailField)
@@ -32,17 +32,21 @@ class LoginScene : SKScene, Scene {
         let passwordFieldFrame = CGRect(origin: CGPoint(x: 90, y: 500), size: CGSize(width: 200, height: 35))
         let passwordField = UITextField(frame: passwordFieldFrame)
         passwordField.backgroundColor = UIColor.white
-        passwordField.layer.borderColor = UIColor.black.cgColor
+        passwordField.layer.borderColor = UIColor.gray.cgColor
         passwordField.layer.borderWidth = 1.0
         passwordField.placeholder = "Password"
         self.view!.addSubview(passwordField)
         
         addChild(loginButton)
         loginButton.zPosition = 3
-        loginButton.position.x = 20
-        loginButton.position.y = -115
+        loginButton.position.x = 15
+        loginButton.position.y = 300
         loginButton.setScale(0.3)
         loginButton.selectedHandler = {
+//            self.view!.subviews.forEach({ $0.removeFromSuperview() })
+            for view in self.view!.subviews {
+                view.removeFromSuperview()
+            }
             self.controller.showLobby()
         }
         

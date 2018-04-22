@@ -17,8 +17,8 @@ struct Category {
     static let Goal: UInt32 = 0b100
 }
 
-class GameScene: SKScene, SKPhysicsContactDelegate {
-    
+class GameScene: SKScene, SKPhysicsContactDelegate, Scene {
+    var controller : GameProtocol!
     let motion = CMMotionManager()
     
     private var puck = SKSpriteNode(imageNamed: "Airhawkey1.png")
@@ -72,6 +72,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    func setController(_ controller: GameProtocol) {
+        self.controller = controller
+    }
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered

@@ -13,7 +13,7 @@ import SocketIO
 
 class GameViewController: UIViewController, GameProtocol {
     
-    let SockIOManager = SocketManager(socketURL: URL(string: "https://airhawkey-ifvictr.c9users.io")!,config:[.log(true)])
+    let SockIOManager = SocketManager(socketURL: URL(string: "https://airhawkey-ifvictr.c9users.io")!,config:[.log(true),.connectParams(["token:": "citrus"])])
     var socket:SocketIOClient!
 
     override func viewDidLoad() {
@@ -36,7 +36,9 @@ class GameViewController: UIViewController, GameProtocol {
         }
     }
     func showStartGame(){
-        
+        if let scene = GameScene(fileNamed: "GameScene") {
+            massageScene(scene: scene)
+        }
     }
     func showGameOver(){
         
