@@ -15,6 +15,8 @@ class GameViewController: UIViewController, GameProtocol {
     
     let SockIOManager = SocketManager(socketURL: URL(string: "https://airhawkey-ifvictr.c9users.io")!,config:[.log(true),.connectParams(["token:": "citrus"])])
     var socket:SocketIOClient!
+    
+    private var gameToken = "kat-peng"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,12 +61,13 @@ class GameViewController: UIViewController, GameProtocol {
     private func setSocketEvents() {
         self.socket.on(clientEvent: .connect) {data, ack in
             print("socket connected")
+            self.socket.emit("UUID", self.gameToken)
         }
         self.socket.on("got players") {data, ack in
             print(data)
         }
-        self.socket.on("") {data, ack in
-            
+        self.socket.on("test") {data, ack in
+            print(data)
         }
     }
 

@@ -26,7 +26,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, Scene {
     
     override func didMove(to view: SKView) {
         
-        backgroundColor = SKColor.white
+        backgroundColor = SKColor.black
         
         self.physicsWorld.contactDelegate = self
         
@@ -40,7 +40,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, Scene {
 //        puck.physicsBody?.fieldBitMask = 1
         puck.physicsBody?.contactTestBitMask = Category.Puck // WAS 2
         puck.physicsBody?.restitution = 0.995
-        puck.physicsBody?.friction = 0.1
+        puck.physicsBody?.friction = 0.001
         
         paddle.physicsBody = SKPhysicsBody(circleOfRadius: 75)
         paddle.size = CGSize(width: 150, height: 150)
@@ -50,7 +50,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, Scene {
         paddle.physicsBody?.collisionBitMask = Category.Puck // WAS 1
 //        paddle.physicsBody?.fieldBitMask = 2
         paddle.physicsBody?.contactTestBitMask = Category.Paddle // WAS 1
-        paddle.physicsBody?.friction = 0.2
+        paddle.physicsBody?.friction = 0.002
         paddle.physicsBody?.restitution = 1
         
 //        if paddle.physicsBody?.categoryBitMask == puck.physicsBody?.collisionBitMask {
