@@ -6,6 +6,8 @@
             const socket = io();
             socket.on("got players", console.log);
             socket.on("game invite", console.log);
+            socket.on("game started", console.log);
+            socket.on("moved", console.log);
         </script>
     </body>
 </html>
