@@ -11,18 +11,28 @@ import SpriteKit
 import GameplayKit
 import SocketIO
 
+var gameDataReady: Bool = false
+
+struct gameData {
+    var playposx : CGFloat
+    var playposy : CGFloat
+    var accelx : CGFloat
+    var accely : CGFloat
+}
+
+let SockIOManager = SocketManager(socketURL: URL(string: "https://airhawkey-ifvictr.c9users.io")!,config:[.log(true),.connectParams(["token:": "citrus"])])
+var socket:SocketIOClient!
+
 class GameViewController: UIViewController, GameProtocol {
+
     
-    let SockIOManager = SocketManager(socketURL: URL(string: "https://airhawkey-ifvictr.c9users.io")!,config:[.log(true),.connectParams(["token:": "citrus"])])
-    var socket:SocketIOClient!
-    
-    private var gameToken = "kat-peng"
+    private var gameToken = "danny-peng" // STANLEY: CHANGE THIS TO "KAT-PENG"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.socket = SockIOManager.defaultSocket
+        socket = SockIOManager.defaultSocket
         self.setSocketEvents()
-        self.socket.connect()
+        socket.connect()
         showLogin()
     }
     
@@ -59,15 +69,14 @@ class GameViewController: UIViewController, GameProtocol {
     }
     
     private func setSocketEvents() {
-        self.socket.on(clientEvent: .connect) {data, ack in
+        socket.on(clientEvent: .connect) {data, ack in
             print("socket connected")
-            self.socket.emit("UUID", self.gameToken)
+            socket.emit("UUID", self.gameToken)
         }
-        self.socket.on("got players") {data, ack in
+        socket.on("got players") {data, ack in
             print(data)
         }
-        self.socket.on("test") {data, ack in
-            print(data)
+        if gameDataReady == true {
         }
     }
 
