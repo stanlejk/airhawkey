@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Airhawkey1" translatesAutoresizingMaskIntoConstraints="NO" id="1Lg-98-4eU">
+                    <rect key="frame" x="62" y="67" width="250" height="250"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTa-c2-tUo">
+                    <rect key="frame" x="65" y="406" width="46" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.44313725490196076" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksd-rz-fKy">
+                    <rect key="frame" x="32" y="443" width="79" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.44313725490196076" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dLs-8B-AsE">
+                    <rect key="frame" x="119" y="440" width="217" height="30"/>
+                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1RH-BV-NDh">
+                    <rect key="frame" x="119" y="401" width="217" height="30"/>
+                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P8Z-6W-Ap6">
+                    <rect key="frame" x="152" y="505.5" width="70" height="29.5"/>
+                    <color key="backgroundColor" red="1" green="0.4431372549" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="LOG IN">
+                        <attributedString key="attributedTitle">
+                            <fragment content="LOG IN">
+                                <attributes>
+                                    <font key="NSFont" size="15" name=".SFNSText"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Airhawkeylabel" translatesAutoresizingMaskIntoConstraints="NO" id="G6S-XM-iWa">
+                    <rect key="frame" x="19" y="290" width="336" height="41"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="1Lg-98-4eU" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="1PK-e5-D90"/>
+                <constraint firstItem="P8Z-6W-Ap6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="152" id="CNG-Vn-nBH"/>
+                <constraint firstItem="P8Z-6W-Ap6" firstAttribute="top" secondItem="dLs-8B-AsE" secondAttribute="bottom" constant="24" id="DHp-2U-rwY"/>
+                <constraint firstItem="dLs-8B-AsE" firstAttribute="top" secondItem="jTa-c2-tUo" secondAttribute="bottom" constant="15" id="HxW-XJ-GFs"/>
+                <constraint firstAttribute="trailing" secondItem="dLs-8B-AsE" secondAttribute="trailing" constant="39" id="HzP-fS-50Z"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1RH-BV-NDh" secondAttribute="trailing" constant="39" id="JDg-xI-7d4"/>
+                <constraint firstItem="1RH-BV-NDh" firstAttribute="top" secondItem="G6S-XM-iWa" secondAttribute="bottom" constant="52.5" id="JjF-mw-cBX"/>
+                <constraint firstItem="dLs-8B-AsE" firstAttribute="leading" secondItem="ksd-rz-fKy" secondAttribute="trailing" constant="8" id="Q7c-3F-ul7"/>
+                <constraint firstItem="1RH-BV-NDh" firstAttribute="leading" secondItem="jTa-c2-tUo" secondAttribute="trailing" constant="8" id="Qyd-t2-j3I"/>
+                <constraint firstItem="jTa-c2-tUo" firstAttribute="top" secondItem="G6S-XM-iWa" secondAttribute="bottom" constant="55.5" id="TZN-jM-84G"/>
+                <constraint firstItem="G6S-XM-iWa" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-26.5" id="WeP-PU-Dmr"/>
+                <constraint firstItem="dLs-8B-AsE" firstAttribute="leading" secondItem="ksd-rz-fKy" secondAttribute="trailing" constant="8" id="XLR-Bo-6fG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="P8Z-6W-Ap6" secondAttribute="bottom" constant="132" id="ZH5-zp-y6S"/>
+                <constraint firstItem="G6S-XM-iWa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cvo-7M-Bgc"/>
+                <constraint firstItem="ksd-rz-fKy" firstAttribute="top" secondItem="jTa-c2-tUo" secondAttribute="bottom" constant="18" id="frR-Nh-6xu"/>
+                <constraint firstItem="dLs-8B-AsE" firstAttribute="top" secondItem="1RH-BV-NDh" secondAttribute="bottom" constant="9" id="gSw-Kn-SlJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="P8Z-6W-Ap6" secondAttribute="trailing" constant="153" id="lBa-Vo-2JY"/>
+                <constraint firstAttribute="bottom" secondItem="ksd-rz-fKy" secondAttribute="bottom" constant="203" id="mqq-yp-zvc"/>
+                <constraint firstItem="P8Z-6W-Ap6" firstAttribute="top" secondItem="dLs-8B-AsE" secondAttribute="bottom" constant="24" id="nlx-hb-Sb7"/>
+                <constraint firstItem="1Lg-98-4eU" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pWQ-dM-o6N"/>
+                <constraint firstItem="ksd-rz-fKy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="uGN-5X-9qX"/>
+                <constraint firstItem="jTa-c2-tUo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="257" id="wZm-kw-ARC"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Airhawkey1" width="504" height="506"/>
+        <image name="Airhawkeylabel" width="656" height="83"/>
+    </resources>
+</document>

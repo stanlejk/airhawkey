@@ -8,7 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		477249ECFA7A8CBDD6B7AA78 /* Pods_airhawkeyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037BCD3B2DB7A5D12A28ED97 /* Pods_airhawkeyTests.framework */; };
+		48754D36208CDC8700CC0DEE /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48754D35208CDC8700CC0DEE /* ButtonNode.swift */; };
+		48754D3A208CDEB000CC0DEE /* LobbyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 48754D39208CDEB000CC0DEE /* LobbyScene.sks */; };
+		48754D3C208CDEBA00CC0DEE /* LobbyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48754D3B208CDEBA00CC0DEE /* LobbyScene.swift */; };
+		48A53DAD208CBF8E00AADD1A /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A53DAC208CBF8E00AADD1A /* GameProtocol.swift */; };
+		48A53DAF208CC12B00AADD1A /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A53DAE208CC12B00AADD1A /* Scene.swift */; };
+		48A53DB2208CC15D00AADD1A /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A53DB1208CC15D00AADD1A /* Controller.swift */; };
+		48A53DB4208CC39D00AADD1A /* LoginScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 48A53DB3208CC39D00AADD1A /* LoginScene.sks */; };
+		48A53DB6208CC42800AADD1A /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A53DB5208CC42800AADD1A /* LoginScene.swift */; };
 		48E00082208C8287006496A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48E00081208C8287006496A4 /* GoogleService-Info.plist */; };
+		48E0008A208CB35C006496A4 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48E00089208CB35C006496A4 /* LoginView.xib */; };
 		4BE933A3ADB76F2880E0E007 /* Pods_airhawkey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36952B2428DFDDAB5199636 /* Pods_airhawkey.framework */; };
 		65708410208C06EF00D74D27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6570840F208C06EF00D74D27 /* AppDelegate.swift */; };
 		65708412208C06EF00D74D27 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65708411208C06EF00D74D27 /* GameScene.sks */; };
@@ -43,7 +52,16 @@
 /* Begin PBXFileReference section */
 		037BCD3B2DB7A5D12A28ED97 /* Pods_airhawkeyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_airhawkeyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A84E2AFFE80AF8FBFAB6A4F /* Pods-airhawkeyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-airhawkeyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-airhawkeyTests/Pods-airhawkeyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		48754D35208CDC8700CC0DEE /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
+		48754D39208CDEB000CC0DEE /* LobbyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LobbyScene.sks; sourceTree = "<group>"; };
+		48754D3B208CDEBA00CC0DEE /* LobbyScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyScene.swift; sourceTree = "<group>"; };
+		48A53DAC208CBF8E00AADD1A /* GameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
+		48A53DAE208CC12B00AADD1A /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		48A53DB1208CC15D00AADD1A /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		48A53DB3208CC39D00AADD1A /* LoginScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LoginScene.sks; sourceTree = "<group>"; };
+		48A53DB5208CC42800AADD1A /* LoginScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScene.swift; sourceTree = "<group>"; };
 		48E00081208C8287006496A4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../var/folders/69/87gn5mkd0fj4k07n8y9hc_f00000gn/T/com.apple.iChat/Messages/Transfers/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		48E00089208CB35C006496A4 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		6570840C208C06EF00D74D27 /* airhawkey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = airhawkey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6570840F208C06EF00D74D27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65708411208C06EF00D74D27 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -132,6 +150,15 @@
 				6570841C208C06F000D74D27 /* Assets.xcassets */,
 				6570841E208C06F000D74D27 /* LaunchScreen.storyboard */,
 				65708421208C06F000D74D27 /* Info.plist */,
+				48E00089208CB35C006496A4 /* LoginView.xib */,
+				48A53DAC208CBF8E00AADD1A /* GameProtocol.swift */,
+				48A53DAE208CC12B00AADD1A /* Scene.swift */,
+				48A53DB1208CC15D00AADD1A /* Controller.swift */,
+				48A53DB3208CC39D00AADD1A /* LoginScene.sks */,
+				48A53DB5208CC42800AADD1A /* LoginScene.swift */,
+				48754D35208CDC8700CC0DEE /* ButtonNode.swift */,
+				48754D39208CDEB000CC0DEE /* LobbyScene.sks */,
+				48754D3B208CDEBA00CC0DEE /* LobbyScene.swift */,
 			);
 			path = airhawkey;
 			sourceTree = "<group>";
@@ -189,7 +216,7 @@
 				65708409208C06EF00D74D27 /* Frameworks */,
 				6570840A208C06EF00D74D27 /* Resources */,
 				E9032D34CDF9ACEEEE602824 /* [CP] Embed Pods Frameworks */,
-				E5FE5322887C2DBA6EF1A153 /* [CP] Copy Pods Resources */,
+				00C06BD372A0F969A84FC167 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -208,8 +235,6 @@
 				65708422208C06F000D74D27 /* Sources */,
 				65708423208C06F000D74D27 /* Frameworks */,
 				65708424208C06F000D74D27 /* Resources */,
-				00CFEE597A0D5B31EC71E66D /* [CP] Embed Pods Frameworks */,
-				EB87E595EE86873DF34793B4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,8 +254,6 @@
 				6570842D208C06F000D74D27 /* Sources */,
 				6570842E208C06F000D74D27 /* Frameworks */,
 				6570842F208C06F000D74D27 /* Resources */,
-				E9A91D4A3C819E37D76D5882 /* [CP] Embed Pods Frameworks */,
-				9BD0982ACDB3CCB6CA1C7798 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -290,7 +313,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48A53DB4208CC39D00AADD1A /* LoginScene.sks in Resources */,
 				6570841B208C06EF00D74D27 /* Main.storyboard in Resources */,
+				48754D3A208CDEB000CC0DEE /* LobbyScene.sks in Resources */,
+				48E0008A208CB35C006496A4 /* LoginView.xib in Resources */,
 				65708412208C06EF00D74D27 /* GameScene.sks in Resources */,
 				6570841D208C06F000D74D27 /* Assets.xcassets in Resources */,
 				65708420208C06F000D74D27 /* LaunchScreen.storyboard in Resources */,
@@ -316,19 +342,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		00CFEE597A0D5B31EC71E66D /* [CP] Embed Pods Frameworks */ = {
+		00C06BD372A0F969A84FC167 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-airhawkey/Pods-airhawkey-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-airhawkeyTests/Pods-airhawkeyTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-airhawkey/Pods-airhawkey-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		25F83A6AEC9B1A130AEB2717 /* [CP] Check Pods Manifest.lock */ = {
@@ -349,21 +378,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9BD0982ACDB3CCB6CA1C7798 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-airhawkeyUITests/Pods-airhawkeyUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B83466075BCDF33535FED983 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -380,21 +394,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E5FE5322887C2DBA6EF1A153 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-airhawkey/Pods-airhawkey-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E8BF085084256ACC13285D90 /* [CP] Check Pods Manifest.lock */ = {
@@ -422,47 +421,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-airhawkey/Pods-airhawkey-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-airhawkey/Pods-airhawkey-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E9A91D4A3C819E37D76D5882 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-airhawkeyUITests/Pods-airhawkeyUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EB87E595EE86873DF34793B4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-airhawkeyTests/Pods-airhawkeyTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -472,9 +447,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48A53DAD208CBF8E00AADD1A /* GameProtocol.swift in Sources */,
+				48A53DB6208CC42800AADD1A /* LoginScene.swift in Sources */,
+				48A53DAF208CC12B00AADD1A /* Scene.swift in Sources */,
 				65708416208C06EF00D74D27 /* GameScene.swift in Sources */,
 				65708418208C06EF00D74D27 /* GameViewController.swift in Sources */,
+				48754D3C208CDEBA00CC0DEE /* LobbyScene.swift in Sources */,
+				48754D36208CDC8700CC0DEE /* ButtonNode.swift in Sources */,
 				65708410208C06EF00D74D27 /* AppDelegate.swift in Sources */,
+				48A53DB2208CC15D00AADD1A /* Controller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
