@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            const socket = io();
+            socket.on("got players", console.log);
+            socket.on("game invite", console.log);
+        </script>
+    </body>
+</html>
