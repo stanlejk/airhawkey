@@ -27,6 +27,7 @@ io.on("connection", socket => {
     // Add new player to list
     players[id] = { name: "test", open: true };
     console.log(`player ${id} joined`);
+    socket.emit("new player", id);
     // Informational request
     socket.on("get players", () => {
         socket.emit("got players", players);
@@ -67,6 +68,7 @@ io.on("connection", socket => {
     });
     // When player moves paddle
     socket.on("move", data => {
+        console.log(data);
         let newData = { ...data };
         newData.turn = newData.turn === 1 ? 0 : 1; // Alternate turn and return
         // data: {
