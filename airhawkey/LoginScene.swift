@@ -38,10 +38,10 @@ class LoginScene : SKScene, Scene {
         self.view!.addSubview(passwordField)
         
         addChild(loginButton)
-        loginButton.zPosition = 3
-        loginButton.position.x = 15
-        loginButton.position.y = 300
-        loginButton.setScale(0.3)
+        loginButton.zPosition = 5
+        loginButton.position.x = 12
+        loginButton.position.y = -475
+        loginButton.setScale(0.6)
         loginButton.selectedHandler = {
 //            self.view!.subviews.forEach({ $0.removeFromSuperview() })
             for view in self.view!.subviews {
