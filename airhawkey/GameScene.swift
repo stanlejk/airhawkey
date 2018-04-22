@@ -9,6 +9,7 @@
 import SpriteKit
 import GameplayKit
 import CoreMotion
+import SocketIO
 
 struct Category {
     static let TopBorder: UInt32 = 0
@@ -23,6 +24,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, Scene {
     
     private var puck = SKSpriteNode(imageNamed: "Airhawkey1.png")
     private var paddle = SKSpriteNode(imageNamed: "Paddle.png")
+    
+    var px : CGFloat = 0
+    var py : CGFloat = 0
+    
     
     override func didMove(to view: SKView) {
         
@@ -81,6 +86,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, Scene {
         
     }
     
+
+    
     func startAccelerometers() {
         // Make sure the accelerometer hardware is available.
         if self.motion.isAccelerometerAvailable {
@@ -92,8 +99,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, Scene {
                                repeats: true, block: { (timer) in
                                 // Get the accelerometer data.
                                 if let data = self.motion.accelerometerData {
-                                    let px = data.acceleration.x
-                                    let py = data.acceleration.y
+                                    self.px = CGFloat(data.acceleration.x)
+                                    self.py = CGFloat(data.acceleration.y)
 //                                    let pz = data.acceleration.z
                                     
 //                                    print("x is: ", px, "y is: ", py )
@@ -101,36 +108,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate, Scene {
                                     var currentX = self.paddle.position.x
                                     var currentY = self.paddle.position.y
                                     
-                                    if px < 0 {
-                                        if (currentX + CGFloat(px * 100) < -415 || currentX <= -415) {
+                                    if self.px < 0 {
+                                        if (currentX + CGFloat(self.px * 100) < -415 || currentX <= -415) {
                                             self.paddle.position.x = -415
                                         }
                                         else {
-                                            self.paddle.position.x = currentX + CGFloat(px * 100)
+                                            self.paddle.position.x = currentX + CGFloat(self.px * 100)
                                         }
                                     }
-                                    else if px > 0 {
-                                        if (currentX + CGFloat(px * 100) > 415 || currentX >= 415) {
+                                    else if self.px > 0 {
+                                        if (currentX + CGFloat(self.px * 100) > 415 || currentX >= 415) {
                                             self.paddle.position.x = 415
                                         }
                                         else {
-                                            self.paddle.position.x = currentX + CGFloat(px * 100)
+                                            self.paddle.position.x = currentX + CGFloat(self.px * 100)
                                         }
                                     }
-                                    if py < 0 {
-                                        if (currentY + CGFloat(py * 100) < -85 || currentY <= -85) {
+                                    if self.py < 0 {
+                                        if (currentY + CGFloat(self.py * 100) < -85 || currentY <= -85) {
                                             self.paddle.position.y = -85
                                         }
                                         else {
-                                            self.paddle.position.y = currentY + CGFloat(py * 100)
+                                            self.paddle.position.y = currentY + CGFloat(self.py * 100)
                                         }
                                     }
-                                    else if py > 0 {
-                                        if (currentY + CGFloat(py * 100) > 800 || currentY >= 800) {
+                                    else if self.py > 0 {
+                                        if (currentY + CGFloat(self.py * 100) > 800 || currentY >= 800) {
                                             self.paddle.position.y = 800
                                         }
                                         else {
-                                            self.paddle.position.y = currentY + CGFloat(py * 100)
+                                            self.paddle.position.y = currentY + CGFloat(self.py * 100)
                                         }
                                     }
                                     
@@ -139,7 +146,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, Scene {
 //                                    var sety = CGFloat(120 * py) + (self.size.height * 0.1)
 ////                                    self.paddle.physicsBody?.applyForce(CGVector(dx: CGFloat(px), dy: CGFloat(sety)))
 //                                    self.paddle.position = CGPoint(x: setx, y: sety)
-                                    self.physicsWorld.gravity = CGVector(dx: CGFloat(px) * 10, dy: CGFloat(py) * 10)
+                                    self.physicsWorld.gravity = CGVector(dx: CGFloat(self.px) * 10, dy: CGFloat(self.py) * 10)
     
                                     
                                 }
@@ -158,6 +165,20 @@ extension GameScene {
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         if collision == Category.TopBorder | Category.Puck {
             print("Puck ran into TopBorder")
+            
+            var gd = gameData.init(playposx: self.paddle.position.x , playposy: self.paddle.position.y, accelx: px, accely: py)
+            //manage puck disapppearing.
+            var datahold = [CGFloat]()
+            datahold.append(gd.playposx)
+            datahold.append(gd.playposy)
+            datahold.append(gd.accely)
+            datahold.append(gd.accelx)
+            datahold.append(1.0) // STANLEY: CHANGE THIS TO 0.0
+            
+            socket.emit("move", datahold)
+            
+            
+            
         }
         else if collision == Category.Goal {
             // Initialize player who got scored on (or who scored)
