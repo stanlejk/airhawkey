@@ -1,0 +1,6 @@
+framework module Pods_airhawkeyTests {
+  umbrella header "Pods-airhawkeyTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
