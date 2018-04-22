@@ -23,11 +23,18 @@ let games = {
 };
 
 io.on("connection", socket => {
-    const id = socket.id;
-    // Add new player to list
-    players[id] = { name: "test", open: true };
-    console.log(`player ${id} joined`);
-    socket.emit("new player", id);
+    // const id = socket.id;
+    let id; // ID received from client
+    socket.on("UUID", receivedId => {
+        id = receivedId;
+        // Add new player to list
+        players[id] = { name: "test", open: true };
+        console.log(`player ${id} joined`);
+        socket.emit("new player", id);
+    });
+    setInterval(() => {
+        socket.emit("test", Date.now());
+    }, 1000);
     // Informational request
     socket.on("get players", () => {
         socket.emit("got players", players);
@@ -69,8 +76,9 @@ io.on("connection", socket => {
     // When player moves paddle
     socket.on("move", data => {
         console.log(data);
-        let newData = { ...data };
-        newData.turn = newData.turn === 1 ? 0 : 1; // Alternate turn and return
+        let newData = [...data];
+        // newData.turn = newData.turn === 1 ? 0 : 1; // Alternate turn and return
+        newData[5] = newData[5] === 1 ? 0 : 1;
         // data: {
         //     gameId
         //     gameInfo
