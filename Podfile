@@ -6,7 +6,10 @@ target 'airhawkey' do
   use_frameworks!
 
   # Pods for airhawkey
+    pod 'Socket.IO-Client-Swift', '~> 13.1.0'
     pod 'Firebase/Core'
+    pod 'FirebaseAuth'
+    pod 'FirebaseUI/Auth'
   target 'airhawkeyTests' do
     inherit! :search_paths
     # Pods for testing

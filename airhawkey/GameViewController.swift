@@ -9,26 +9,60 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import SocketIO
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, GameProtocol {
+    
+    let SockIOManager = SocketManager(socketURL: URL(string: "https://airhawkey-ifvictr.c9users.io")!,config:[.log(true)])
+    var socket:SocketIOClient!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.socket = SockIOManager.defaultSocket
+        self.setSocketEvents()
+        self.socket.connect()
+        showLogin()
+    }
+    
+    func showLogin() {
+        if let scene = LoginScene(fileNamed: "LoginScene") {
+            massageScene(scene: scene)
+        }
+    }
+    
+    func showLobby() {
+        if let scene = LobbyScene(fileNamed: "LobbyScene") {
+            massageScene(scene: scene)
+        }
+    }
+    func showStartGame(){
         
-        if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
+    }
+    func showGameOver(){
+        
+    }
+    
+    func massageScene(scene: SKScene) {
+        let skView = self.view as! SKView
+        let ss = scene as! Scene
+        ss.setController(self)
+        
+        skView.showsFPS = false
+        
+        scene.scaleMode = .fill
+        
+        skView.presentScene(scene)
+    }
+    
+    private func setSocketEvents() {
+        self.socket.on(clientEvent: .connect) {data, ack in
+            print("socket connected")
+        }
+        self.socket.on("got players") {data, ack in
+            print(data)
+        }
+        self.socket.on("") {data, ack in
             
-            view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
         }
     }
 
@@ -52,4 +86,5 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
 }
