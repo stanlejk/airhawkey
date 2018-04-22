@@ -63,6 +63,9 @@ class GameViewController: UIViewController, GameProtocol {
         self.socket.on("got players") {data, ack in
             print(data)
         }
+        self.socket.on("new player") {id, ack in
+            print(id)
+        }
         self.socket.on("") {data, ack in
             
         }
