@@ -26,7 +26,7 @@ var socket:SocketIOClient!
 class GameViewController: UIViewController, GameProtocol {
 
     
-    private var gameToken = "danny-peng"
+    private var gameToken = "danny-peng" // STANLEY: CHANGE THIS TO "KAT-PENG"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +77,6 @@ class GameViewController: UIViewController, GameProtocol {
             print(data)
         }
         if gameDataReady == true {
-            
         }
     }
 
