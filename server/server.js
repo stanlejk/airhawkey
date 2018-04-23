@@ -6,6 +6,7 @@ const io = require("socket.io")(http);
 app.set("port", process.env.PORT);
 app.use(express.static("."));
 
+let gameId;
 let players = {
     // "id-here": {
     //     name: "Victor",
@@ -28,7 +29,7 @@ io.on("connection", socket => {
     socket.on("UUID", receivedId => {
         id = receivedId;
         // Add new player to list
-        players[id] = { name: "test", open: true };
+        players[id] = { name: "test", open: true, socketId: socket.id };
         console.log(`player ${id} joined`);
         socket.emit("new player", id);
     });
@@ -56,7 +57,7 @@ io.on("connection", socket => {
         if(accepted) {
             players[fromId].open = false;
             players[id].open = false;
-            const gameId = `${fromId}+${id}`;
+            gameId = `${fromId}+${id}`;
             // Remove from invites
             delete invites[gameId];
             // Add to current games
@@ -87,7 +88,11 @@ io.on("connection", socket => {
         //     turn // socket.id of the next hitter
         // }
 
-        io.in(data.gameId).emit("moved", newData);
+        // io.in(games[gameId][newData[5]]).emit("moved", newData);
+        // socket.emit("moved", newData);
+        const nextPlayerIndex = newData[5];
+        const whichPlayer = games[gameId][nextPlayerIndex];
+        io.to(players[whichPlayer].socketId).emit("moved", newData);
     });
     // Remove player from list
     socket.on("disconnect", () => {
